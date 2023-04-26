@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
     git: 'https://github.com/react-native-google-cast/react-native-google-cast.git',
     tag: s.version.to_s
   }
-  s.default_subspec = 'GuestModeArm'
+  s.default_subspec = 'GuestMode'
 
   s.source_files = 'ios/RNGoogleCast/**/*.{h,m}'
 
@@ -25,11 +25,6 @@ Pod::Spec.new do |s|
   s.dependency 'React'
 
   s.subspec 'GuestMode' do |ss|
-    ss.dependency "#{package['name']}/RNGoogleCast"
-    ss.dependency 'google-cast-sdk'
-  end
-
-  s.subspec 'GuestModeArm' do |ss|
     ss.dependency "#{package['name']}/RNGoogleCast"
     ss.dependency 'google-cast-sdk-dynamic-xcframework'
   end
