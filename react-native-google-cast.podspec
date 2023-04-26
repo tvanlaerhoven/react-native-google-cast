@@ -22,4 +22,29 @@ Pod::Spec.new do |s|
   s.dependency 'google-cast-sdk'
   s.dependency 'PromisesObjC'
   s.dependency 'React'
+
+  s.subspec 'GuestMode' do |ss|
+    ss.dependency "#{package['name']}/RNGoogleCast"
+    ss.dependency 'google-cast-sdk'
+  end
+
+  s.subspec 'GuestModeArm' do |ss|
+    ss.dependency "#{package['name']}/RNGoogleCast"
+    ss.dependency 'google-cast-sdk-dynamic-xcframework'
+  end
+
+  s.subspec 'NoBluetooth' do |ss|
+    ss.dependency "#{package['name']}/RNGoogleCast"
+    ss.dependency 'google-cast-sdk-no-bluetooth'
+  end
+
+  s.subspec 'NoBluetoothArm' do |ss|
+    ss.dependency "#{package['name']}/RNGoogleCast"
+    ss.dependency 'google-cast-sdk-dynamic-xcframework-no-bluetooth'
+  end
+
+  s.subspec 'RNGoogleCast' do |ss|
+    ss.source_files = 'ios/RNGoogleCast/**/*.{h,m}'
+    ss.dependency 'PromisesObjC'
+  end
 end
